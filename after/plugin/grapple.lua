@@ -1,19 +1,13 @@
 require("grapple")
-require("modules.remap")
 
-keymap_once("n", "<leader>t", require("grapple").tag)
-keymap_once("n", "<leader>u", require("grapple").untag)
-keymap_once("n", "<leader>pt", require("grapple").popup_tags)
-
-local grapple_msg = function()
-  return "Tag [" .. require("grapple").key() .. "]"
-end
+vim.keymap.set("n", "<leader>t", require("grapple").toggle)
+vim.keymap.set("n", "<leader>pt", require("grapple").toggle_tags)
 
 require("lualine").setup({
     sections = {
-        lualine_x = {
+        lualine_b = {
             {
-                grapple_msg,
+                require("grapple").statusline,
                 cond = require("grapple").exists
             }
         }
