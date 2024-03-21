@@ -51,7 +51,6 @@ return {
       })
 
       vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', {buffer = bufnr})
-      vim.keymap.set("n", "gt", "<cmd>vsp<CR><C-w><C-l><cmd>lua vim.lsp.buf.definition()<cr>", {})
 
       bemol()
     end)
