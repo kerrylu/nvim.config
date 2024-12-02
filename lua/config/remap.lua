@@ -17,6 +17,9 @@ vim.keymap.set("n", "<Space>", "i<Space><Right><ESC>") -- insert space in normal
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 
+vim.keymap.set("n", "<C-d>", "<C-d>zz", {desc = "Center cursor after moving down half-page"})
+vim.keymap.set("n", "<C-u>", "<C-u>zz", {desc = "Center cursor after moving up half-page"})
+
 -- Remove trailing whitespace
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pattern = {"*"},

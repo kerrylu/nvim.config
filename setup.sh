@@ -30,3 +30,5 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo apt-get install ripgrep
 fi
+
+pip install --upgrade pynvim
