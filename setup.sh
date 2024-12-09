@@ -32,3 +32,5 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 pip install --upgrade pynvim
+
+git clone https://github.com/microsoft/java-debug && cd java-debug && ./mvnw clean install

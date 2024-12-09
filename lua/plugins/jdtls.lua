@@ -46,6 +46,8 @@ return {
 
     local function jdtls_on_attach(client, bufnr)
         local opts = {buffer = bufnr}
+        require("jdtls").setup_dap { hotcodereplace = "auto" }
+        require("jdtls.dap").setup_dap_main_class_configs()
     end
 
     local function jdtls_setup(event)
@@ -136,6 +138,11 @@ return {
             },
         }
 
+        -- used for java debugging
+        local bundles = {
+            vim.fn.glob("~/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar", 1),
+        }
+
         jdtls.start_or_attach({
             cmd = cmd,
             settings = lsp_settings,
@@ -144,6 +151,9 @@ return {
             root_dir = jdtls.setup.find_root({ "packageInfo" }, "Config"),
             flags = {
                 allow_incremental_sync = true,
+            },
+            init_options = {
+                bundles = bundles
             },
         })
     end
