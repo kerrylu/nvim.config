@@ -46,7 +46,12 @@ return {
 
     local function jdtls_on_attach(client, bufnr)
         local opts = {buffer = bufnr}
-        require("jdtls").setup_dap { hotcodereplace = "auto" }
+        require("jdtls").setup_dap {
+            config_overrides = {
+                vmArgs = '-ea -javaagent:/local/home/lukerry/.local/share/nvim/mason/packages/jdtls/lombok.jar',
+            },
+            hotcodereplace = "auto"
+        }
         require("jdtls.dap").setup_dap_main_class_configs()
     end
 
@@ -142,6 +147,7 @@ return {
         local bundles = {
             vim.fn.glob("~/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar", 1),
         }
+        vim.list_extend(bundles, vim.split(vim.fn.glob("~/.config/nvim/vscode-java-test/server/*.jar", 1), "\n"))
 
         jdtls.start_or_attach({
             cmd = cmd,

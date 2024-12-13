@@ -177,4 +177,5 @@ return {
   opts = {},
   -- Optional dependencies
   dependencies = { "nvim-tree/nvim-web-devicons" },
+  vim.keymap.set("n", "<leader>q", "<cmd>Oil<CR>") -- Open oil buffer
 }

@@ -1,7 +1,5 @@
 vim.g.mapleader = ","
 
-vim.keymap.set("n", "<leader>q", "<cmd>Oil<CR>") -- Open oil buffer
-
 -- Split pane and navigation shortcuts
 vim.keymap.set("n", "<leader>s", "<cmd>sp<CR><C-w><C-j>") -- horizontal split window
 vim.keymap.set("n", "<leader>v", "<cmd>vsp<CR>") -- vertical split window

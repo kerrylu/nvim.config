@@ -34,3 +34,4 @@ fi
 pip install --upgrade pynvim
 
 git clone https://github.com/microsoft/java-debug && cd java-debug && ./mvnw clean install
+git clone https://github.com/microsoft/vscode-java-test && cd vscode-java-test && npm install && npm run build-plugin
