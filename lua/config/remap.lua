@@ -17,6 +17,8 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagn
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", {desc = "Center cursor after moving down half-page"})
 vim.keymap.set("n", "<C-u>", "<C-u>zz", {desc = "Center cursor after moving up half-page"})
+vim.keymap.set("n", "n", "nzz", {desc = "Center cursor after moving to next search result"})
+vim.keymap.set("n", "N", "Nzz", {desc = "Center cursor after moving to previous search result"})
 
 -- Remove trailing whitespace
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
