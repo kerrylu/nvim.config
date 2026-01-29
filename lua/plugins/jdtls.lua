@@ -17,9 +17,11 @@ return {
 
         path.data_dir = vim.fn.stdpath("cache") .. "/nvim-jdtls"
 
-        local jdtls_install = require("mason-registry")
-        .get_package("jdtls")
-        :get_install_path()
+        local jdtls_install = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
+        if vim.fn.isdirectory(jdtls_install) == 0 then
+            vim.notify("jdtls not installed via Mason. Run :MasonInstall jdtls", vim.log.levels.WARN)
+            return nil
+        end
 
         path.java_agent = jdtls_install .. "/lombok.jar"
         path.launcher_jar = vim.fn.glob(jdtls_install .. "/plugins/org.eclipse.equinox.launcher_*.jar")
@@ -34,8 +36,8 @@ return {
 
         path.runtimes = {
             {
-                name = "JavaSE-17",
-                path = "/usr/lib/jvm/java-17-amazon-corretto",
+                name = "JavaSE-21",
+                path = "/usr/lib/jvm/java-21-amazon-corretto",
             },
         }
 
@@ -59,6 +61,7 @@ return {
         local jdtls = require("jdtls")
 
         local path = get_jdtls_paths()
+        if not path then return end
         local data_dir = path.data_dir .. "/" ..  vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 
         if cache_vars.capabilities == nil then

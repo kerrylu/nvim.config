@@ -41,6 +41,7 @@ return {
     require('mason').setup({})
     require('mason-lspconfig').setup({
       ensure_installed = { "jdtls", "pyright", "clangd", "kotlin_language_server", "lua_ls", "solargraph", "smithy_ls" },
+      automatic_enable = false,
       handlers = {
         lsp_zero.default_setup,
         jdtls = lsp_zero.noop,

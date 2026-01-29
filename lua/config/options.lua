@@ -26,6 +26,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.ignorecase = true -- Ignore case letters when search
 
+-- windows
 vim.opt.splitright = true -- split window to the right
 
 -- Amazon specific

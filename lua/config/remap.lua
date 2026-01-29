@@ -8,6 +8,10 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
+vim.keymap.set("n", "+", [[<cmd>horizontal resize +5<cr>]]) -- make the window bigger vertically
+vim.keymap.set("n", "_", [[<cmd>horizontal resize -5<cr>]]) -- make the window smaller vertically
+vim.keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window bigger horizontally
+vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller horizontally
 
 vim.keymap.set('v', 'p', 'P', { noremap = true }) -- paste without overwriting register
 
@@ -19,13 +23,3 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", {desc = "Center cursor after moving down
 vim.keymap.set("n", "<C-u>", "<C-u>zz", {desc = "Center cursor after moving up half-page"})
 vim.keymap.set("n", "n", "nzz", {desc = "Center cursor after moving to next search result"})
 vim.keymap.set("n", "N", "Nzz", {desc = "Center cursor after moving to previous search result"})
-
--- Remove trailing whitespace
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = {"*"},
-    callback = function(ev)
-        save_cursor = vim.fn.getpos(".")
-        vim.cmd([[%s/\s\+$//e]])
-        vim.fn.setpos(".", save_cursor)
-    end,
-})
