@@ -5,7 +5,6 @@ return {
   },
   config = function()
     require("claude-code").setup({
-      command = "kiro-cli chat -a", -- Use Kiro CLI with trust all instead of Claude
       window = {
         position = "float",
         float = {
