@@ -29,5 +29,9 @@ vim.opt.ignorecase = true -- Ignore case letters when search
 -- windows
 vim.opt.splitright = true -- split window to the right
 
--- Amazon specific
-vim.filetype.add({ filename = { Config = "brazil-config" } })
+-- Auto-reload files changed externally
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "TermLeave" }, {
+  command = "checktime",
+})
+
