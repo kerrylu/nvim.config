@@ -18,6 +18,8 @@ vim.keymap.set("n", "<Space>", "i<Space><Right><ESC>") -- insert space in normal
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], {desc = "Exit terminal mode to normal mode"})
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz", {desc = "Center cursor after moving down half-page"})
 vim.keymap.set("n", "<C-u>", "<C-u>zz", {desc = "Center cursor after moving up half-page"})
 vim.keymap.set("n", "n", "nzz", {desc = "Center cursor after moving to next search result"})
