@@ -1,34 +1,9 @@
 #!/bin/bash
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-   echo "Setting up for MacOS..."
-elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-   echo "Setting up for Linux..."
-fi
+echo "Setting up for MacOS..."
 
-# neovim
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    brew install neovim
-elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    curl -LO https://github.com/neovim/neovim-releases/releases/download/v0.10.4/nvim-linux-x86_64.appimage 
-    chmod u+x nvim-linux-x86_64.appimage
-    ./nvim-linux-x86_64.appimage --appimage-extract
-    ./squashfs-root/AppRun --version
-    sudo mv squashfs-root /
-    sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
-fi
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    echo 'alias vi=nvim' >> ~/.zshrc
-elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    echo 'alias vi=nvim' >> ~/.bashrc
-fi
+brew install neovim node
+echo 'alias vi=nvim' >> ~/.zshrc
 
 # telescope live_grep
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    brew install ripgrep
-elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    sudo apt-get install ripgrep
-fi
-
-pip install --upgrade pynvim
+brew install ripgrep

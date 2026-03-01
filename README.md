@@ -1,13 +1,9 @@
 # Neovim Config
 
-To setup, run the following steps in terminal:
+To setup, run the following in terminal:
 
-1. `git clone https://github.com/kerrylu/nvim.config.git`
-2. `cp -r nvim.config ~/.config/nvim`
-3. `cd ~/.config/nvim`
-4. `cp -r clangd/ ~/.config/clangd`
-5. `./setup.sh`
-6. `nvim .`
-7. Run :MasonInstall {lsp} for lsp in {pyright, clangd, jdtls}.
+```
+git clone https://github.com/kerrylu/nvim.config.git ~/.config/nvim && ~/.config/nvim/setup.sh
+```
 
 Note: on MacOS custom color schemes will generally fail on the default terminal. I recommend using [iTerm2](https://iterm2.com/).
