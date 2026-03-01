@@ -62,7 +62,7 @@ return {
       keymaps = {
         ["<CR>"] = "actions.select",
         ["<C-p>"] = "actions.preview",
-        ["<C-l>"] = "actions.refresh",
+        ["<C-r>"] = "actions.refresh",
         ["_"] = "actions.open_cwd",
         ["`"] = { "actions.cd", opts = { scope = "tab" }, desc = ":tcd to the current oil directory" },
         ["g."] = "actions.toggle_hidden",
