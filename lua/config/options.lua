@@ -2,11 +2,9 @@
 vim.opt.background = "dark"
 vim.cmd([[colorscheme tokyonight-moon]])
 
--- Display relative line number
-vim.opt.relativenumber = true
-vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='white' })
-vim.api.nvim_set_hl(0, 'LineNr', { fg='green' })
-vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='magenta' })
+-- Hide line numbers
+vim.opt.number = false
+vim.opt.relativenumber = false
 
 -- set textwidth to 119 characters and highlight the column one to the right
 vim.opt.textwidth = 119
@@ -28,10 +26,3 @@ vim.opt.ignorecase = true -- Ignore case letters when search
 
 -- windows
 vim.opt.splitright = true -- split window to the right
-
--- Auto-reload files changed externally
-vim.opt.autoread = true
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "TermLeave" }, {
-  command = "checktime",
-})
-
