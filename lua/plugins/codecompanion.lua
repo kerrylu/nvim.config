@@ -36,7 +36,7 @@ return {
         agents = {
           codex = {
             cmd = "codex",
-            args = {},
+            args = { "--yolo" },
             description = "OpenAI Codex CLI",
             provider = "terminal",
           },
