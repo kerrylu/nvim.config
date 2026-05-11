@@ -5,6 +5,8 @@ vim.cmd([[colorscheme tokyonight-moon]])
 -- Show absolute line numbers
 vim.opt.number = true
 vim.opt.relativenumber = false
+vim.api.nvim_set_hl(0, "LineNr", { fg = "green" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "green" })
 
 -- set textwidth to 119 characters and highlight the column one to the right
 vim.opt.textwidth = 119
