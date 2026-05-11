@@ -2,8 +2,8 @@
 vim.opt.background = "dark"
 vim.cmd([[colorscheme tokyonight-moon]])
 
--- Hide line numbers
-vim.opt.number = false
+-- Show absolute line numbers
+vim.opt.number = true
 vim.opt.relativenumber = false
 
 -- set textwidth to 119 characters and highlight the column one to the right
