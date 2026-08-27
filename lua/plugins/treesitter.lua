@@ -4,7 +4,7 @@ return {
 
   config = function()
     require('nvim-treesitter').setup {
-      ensure_installed = { "bash", "c", "java", "html", "javascript", "jsdoc", "json", "lua", "luadoc", "luap", "markdown", "markdown_inline", "python", "query", "regex", "tsx", "typescript", "vim", "vimdoc", "yaml" },
+      ensure_installed = { "rust", "bash", "c", "java", "html", "javascript", "jsdoc", "json", "lua", "luadoc", "luap", "markdown", "markdown_inline", "python", "query", "regex", "tsx", "typescript", "vim", "vimdoc", "yaml" },
       auto_install = true,
     }
   end

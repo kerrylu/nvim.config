@@ -8,10 +8,6 @@ vim.opt.relativenumber = false
 vim.api.nvim_set_hl(0, "LineNr", { fg = "green" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "green" })
 
--- set textwidth to 119 characters and highlight the column one to the right
-vim.opt.textwidth = 119
-vim.opt.colorcolumn = "+1"
-
 vim.opt.swapfile = false -- Don't use swapfile
 vim.opt.clipboard = "unnamedplus" -- Use the system clipboard for yank and paste
 vim.opt.autoread = true -- Reload files changed outside of Neovim
