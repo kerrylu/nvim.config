@@ -1,7 +1,16 @@
 return {
-  'sindrets/diffview.nvim',
-  cmd = { 'DiffviewOpen' },
+  'dlyongemallo/diffview-plus.nvim',
+  version = '*',
+  main = 'diffview',
+  opts = {
+    view = {
+      default = { layout = 'diff1_inline' }
+    },
+  },
+  cmd = {
+    'DiffviewToggle',
+  },
   keys = {
-    { '<leader>dv', '<cmd>DiffviewOpen<CR>', desc = 'Diffview Open' },
+    { '<leader>dv', '<cmd>DiffviewToggle<CR>', desc = 'Diffview Toggle' },
   },
 }
