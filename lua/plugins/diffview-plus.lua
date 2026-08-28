@@ -4,7 +4,14 @@ return {
   main = 'diffview',
   opts = {
     view = {
-      default = { layout = 'diff1_inline' }
+      default = { layout = 'diff1_inline' },
+      cycle_layouts = {
+        default = {
+          'diff1_inline',
+          'diff2_horizontal',
+          'diff2_vertical',
+        },
+      },
     },
   },
   cmd = {
