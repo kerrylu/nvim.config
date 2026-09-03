@@ -2,11 +2,13 @@
 vim.opt.background = "dark"
 vim.cmd([[colorscheme tokyonight-moon]])
 
--- Show absolute line numbers
+-- Show relative line numbers with an absolute number on the current line
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
+vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "white" })
 vim.api.nvim_set_hl(0, "LineNr", { fg = "green" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "green" })
+vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "magenta" })
 
 vim.opt.swapfile = false -- Don't use swapfile
 vim.opt.clipboard = "unnamedplus" -- Use the system clipboard for yank and paste
